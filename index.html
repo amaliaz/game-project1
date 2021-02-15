@@ -4,15 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dundies Game</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>Dundies</h1>
-        </nav>
-    </header>
-    <div>
-        <h2>Hello</h2>
+    <div id="page-1">
+        <h1 id="game-name">Dundies</h1>
+        <div id="all-elements">
+            <img src="./assets/the-office.png" alt="The Office" id="landing">
+            <div id="buttons">
+                <div id="start-game">
+                    <p id="startText">Start Game</p>
+                </div>
+                <div id="how-to-play">
+                    <p id="rulesOfGameText">How to play</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="page-2">
+        <div class="question"></div>
+        <p class="option" id=option1></p>
+        <p class="option" id=option2></p>
+        <p class="option" id=option3></p>
+        <div class="progress">This is x of y questions.</div>
+    </div>
+    <div id="page-3">
+        <div class="gameOver">
+            <h1>Game Over</h1>
+            <p id="score">You collected x out of y dundies</p>
+        </div>
+        <div class="wonGame">
+            <h1>Congrats</h1>
+            <p id="score">You collected x out of y dundies</p>
+        </div>
     </div>
 </body>
+
 </html>

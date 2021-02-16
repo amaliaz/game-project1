@@ -50,7 +50,7 @@ body {
 .question {
   font-size: 30px;
   font-family: monospace;
-  color: #d7fff5;
+  color: #000000;
   justify-content: center;
   align-items: center;
 }
@@ -61,10 +61,10 @@ body {
   border-radius: 6px;
   border: 1px solid #d7fff5;
   cursor: pointer;
-  color: #ffffff;
+  color: #000000;
   font-family: Arial;
   font-size: 15px;
-  font-weight: bold;
+  font-weight:normal;
   padding: 6px 24px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #999999;
@@ -83,9 +83,10 @@ body {
   display: none;
   align-items: center;
   flex-direction: column;
-  position: fixed;
-  left: 430px;
-  margin-top: 15%;
+  position: fixed; /* or absolute */
+  top: 35%;
+  left: 20%;
+  right: 20%;
   z-index: 20;
 }
 .overlay:after {

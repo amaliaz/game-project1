@@ -44,11 +44,11 @@ let question;
 const questions = {
   pam_office : {
     number: "1",
-    question: "TATATA 1",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question: "How long had Pam been engaged to Roy in Season 1?",
+    option1: "One Year",
+    option2: "Three Years",
+    option3: "Eight Years",
+    correctAnswer: "Three Years",
   },
   jim_office: {
     number: "2",
@@ -181,7 +181,7 @@ allTrophees.forEach(function(trophee) {
 });
 
 function startGame() {
-  page2.style.display = "block";
+  page2.style.display = "grid";
   page2.style.visibility = "visible";
   returnMain.style.display = "flex";
   questionDisplay.style.display = "none";
@@ -263,10 +263,9 @@ function checkAnswer(e, question) {
 function showScore(correctAnswers) {
   var score = document.getElementById("score");
   score.innerHTML = `You got ${correctAnswers} out of 10 dundies!`;
-  page1.style.display = "none";
-  page2.style.display = "none";
-  page4.style.dislay = "none";
-  page3.style.display = "flex";
+  page1.style.visibility = "visible";
+  page2.style.visibility = "hidden";
+  page3.style.visibility = "visible";
   gameOver.style.visibility = "visible";
   startText.innerHTML = "Play Again";
   buttonStart.style.visibility = "visible";

@@ -28,6 +28,9 @@ body {
   visibility: hidden;
   display: none;
   height: 800px;
+  color: white;
+  font-size: 24px;
+  font-family: monospace;
 }
 #page-3 {
   background-repeat: no-repeat;
@@ -172,7 +175,7 @@ right: 10px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #999999;
   margin-top: 20px;
-  margin-right: 2px;
+  margin-right: 27px;
 }
 #backBtn:hover {
   background: linear-gradient(to bottom, #999999 5%, #d7fff5 100%);
@@ -310,11 +313,15 @@ header .landing {
 } */
 
   .container {
+    position: relative;
+    top: 5%;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 5px;
     padding: 35px;
+    color: white;
+    font-size: 18px;
   }
   .container img {
     width: 100%;

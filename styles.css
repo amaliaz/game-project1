@@ -44,6 +44,45 @@ body {
   justify-content: center;
   text-align: center;
 }
+.question {
+  font-size: 30px;
+  font-family: monospace;
+  color: #d7fff5;
+  justify-content: center;
+  align-items: center;
+}
+.option {
+  box-shadow: inset 0px 1px 0px 0px #efdcfb;
+  background: linear-gradient(to bottom, #d7fff5 5%, #999999 100%);
+  background-color: #999999;
+  border-radius: 6px;
+  border: 1px solid #d7fff5;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #999999;
+  margin-top: 20px;
+  margin-right: 2px;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.option:hover {
+  background: linear-gradient(to bottom, #999999 5%, #d7fff5 100%);
+  background-color: #d7fff5;
+  justify-content: center;
+  align-items: center;
+}
+.overlay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .rules{
   background-color: rgb(255, 255, 255);
   color: #941e00;
@@ -196,9 +235,21 @@ header .landing {
 .startBtn:hover {
   background: grey;
 }
-.image-dundies-zoom{
+
+/* Magnifier Glass */
+/* .image-dundies-zoom{
     position: relative; 
-}
+} */
+
+/* .img-magnifier-glass {
+  position: absolute;
+  border: 3px solid #000;
+  border-radius: 50%;
+  cursor: none; */
+  /*Set the size of the magnifier glass:*/
+  /* width: 100px;
+  height: 100px;
+} */
 
   .container {
     height: 100%;

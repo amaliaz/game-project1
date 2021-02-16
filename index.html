@@ -13,7 +13,7 @@
     <div id="page-1">
         <h1 id="game-name">Dundies</h1>
         <div id="all-elements">
-            <img src="./assets/the-office.png" alt="The Office" id="landing">
+            <img src="./assets/the-office-logo.png" alt="The Office" id="landing">
             <div id="buttons">
                 <div id="start-game" onclick="startGame()">
                     <p id="startText">Start Game</p>
@@ -25,9 +25,25 @@
         </div>
     </div>
     <div id="page-2">
-        <div class="image-dundies-zoom">
-        <img  id="image-dundies" src="./assets/dundies.png" usemap="#image-map">
-        <map name="image-map">
+        <div class="container">
+        <img  id="pam_office" class="trophee" src="./images/pam.gif" alt="pam" title="Pam">
+        <img  id="jim_office" class="trophee" src="./images/jim.gif" alt="jim" title="Jim">
+        <img  id="dwight_office" class="trophee" src="./images/dwight.gif" alt="dwight" title="Dwight">
+        <img  id="michael_office" class="trophee" src="./images/michael.gif" alt="michael" title="michael">
+        <img  id="phyllis_office" class="trophee" src="./images/phyllis.gif" alt="phyllis" title="Phyllis">
+        <img  id="kelly_offce" class="trophee" src="./images/kelly.gif" alt="kelly" title="Kelly">
+        <img  id="stanley_office" class="trophee" src="./images/stanley.gif" alt="stanley" title="Stanley">
+        <img  id="oscar_office" class="trophee" src="./images/oscar.gif" alt="oscar" title="Oscar">
+        <img  id="angela_office" class="trophee" src="./images/angela.gif" alt="angela" title="Angela">
+        <img  id="ryan_office" class="trophee" src="./images/ryan.gif" alt="ryan" title="Ryan">
+        <img  id="daryl_office" class="trophee" src="./images/darryl.gif" alt="daryl" title="Daryl">
+        <img  id="toby_office" class="trophee" src="./images/toby.gif" alt="toby" title="Toby">
+        <img  id="kevin_office" class="trophee" src="./images/kevin.gif" alt="kevin" title="Kevin">
+        <img  id="andy_office" class="trophee" src="./images/andy.gif" alt="andy" title="Andy">
+        <img  id="creg_office" class="trophee" src="./images/creg.gif" alt="creg" title="Creg">
+
+
+        <!-- <map name="image-map">
             <area id="trophee_1" class="trophee" alt="dundie1" title="dundie1" coords="473,436,466,450,482,452,498,453,497,440" shape="poly">
             <area id="trophee_2" class="trophee" alt="dundie2" title="dundie2" coords="112,487,125,495,115,513,101,499" shape="poly">
             <area id="trophee_3" class="trophee" alt="dundie3" title="dundie3" coords="144,495,148,484,159,492,152,508" shape="poly">
@@ -38,14 +54,16 @@
             <area id="trophee_8" class="trophee" alt="dundie8" title="dundie8" coords="172,184,163,200,170,213,182,205" shape="poly">
             <area id="trophee_9" class="trophee" alt="dundie9" title="dundie9" coords="259,210,253,236,262,241,269,218" shape="poly">
             <area id="trophee_10" class="trophee" alt="dundie10" title="dundie10" coords="437,175,430,190,444,199,450,184" shape="poly">
-        </map>
+        </map> -->
     </div>
+    <div class="overlay">
         <div class="question"></div>
         <p class="option" id=option1></p>
         <p class="option" id=option2></p>
         <p class="option" id=option3></p>
         <div class="progress">This is x of y questions.</div>
     </div>
+</div>
     <div id="page-3">
         <div class="gameOver">
             <h1>Game Over</h1>

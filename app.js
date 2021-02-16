@@ -175,6 +175,7 @@ function handleClick(evt) {
   option2.style.display = "flex";
   option3.style.display = "flex";
   overlay.style.display = "flex";
+  
   return question;
 }
 allTrophees.forEach(function(trophee) {
@@ -182,7 +183,7 @@ allTrophees.forEach(function(trophee) {
 });
 
 function handleAnswer(evt){
-  if (evt.target.id === evt.correctAnswer)
+  if (questions[evt.target.id] === questions[evt.correctAnswer])
   { 
     page3.style.display = "flex";
     page3.style.visibility = "visible";

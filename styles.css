@@ -33,7 +33,7 @@ body {
   font-family: monospace;
 }
 #page-3 {
-  height: 800px;
+  height: 100px;
   visibility: hidden;
   display: none;
   color: white;

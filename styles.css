@@ -70,23 +70,50 @@ body {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  display: none;
 }
 .option:hover {
   background: linear-gradient(to bottom, #999999 5%, #d7fff5 100%);
   background-color: #d7fff5;
-  justify-content: center;
-  align-items: center;
 }
 .overlay{
-  display: flex;
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  left: 430px;
+  margin-top: 15%;
+  z-index: 20;
+}
+.overlay:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,0.2413340336134454) 100%);
+  z-index: -2;
+}
+
+.overlay:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+.rules{
+  background-color: rgba(255, 255, 255, 0.747);
+  color: #941e00;
+  padding: 5%;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-.rules{
-  background-color: rgb(255, 255, 255);
-  color: #941e00;
-  padding: 5%;
 }
 .rules>h2{
   padding: 5%;
@@ -94,7 +121,7 @@ body {
   font-size: 46px;
 }
 .rules>p{
-  padding: 5%;
+  padding: 2%;
   font-style: italic;
   font-size: 18px;
 }
@@ -121,6 +148,37 @@ body {
   background-color: #ffc8c8;
 }
 #returnBtn:active {
+  position: relative;
+  top: 1px;
+}
+.returnMain{
+  position: fixed;
+top: 10px;
+right: 10px;
+}
+#backBtn{
+  box-shadow: inset 0px 1px 0px 0px #efdcfb;
+  background: linear-gradient(to bottom, #d7fff5 5%, #999999 100%);
+  background-color: #999999;
+  border-radius: 6px;
+  border: 1px solid #d7fff5;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #999999;
+  margin-top: 20px;
+  margin-right: 2px;
+}
+#backBtn:hover {
+  background: linear-gradient(to bottom, #999999 5%, #d7fff5 100%);
+  background-color: #d7fff5;
+}
+#backBtn:active {
   position: relative;
   top: 1px;
 }

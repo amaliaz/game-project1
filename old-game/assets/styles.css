@@ -1,7 +1,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 html {
   height: 100%;
@@ -13,21 +12,21 @@ body {
   background-color: rgb(0, 0, 0);
   background-image: url("./assets/background-landing.png");
 }
-
-.timer{
-  margin: 50px;
-  color: white;
-}
 #page-1 {
   background-repeat: no-repeat;
   height: 100%;
   visibility: visible;
-  margin-top: 100px;
 }
 #page-2 {
+  background-repeat: no-repeat;
+  height: 100%;
   visibility: hidden;
   display: none;
-  height: 800px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#page-2 img{
 }
 #page-3 {
   background-repeat: no-repeat;
@@ -35,62 +34,11 @@ body {
   visibility: hidden;
   display: none;
 }
-#page-4 {
-  background-repeat: no-repeat;
-  height: 100%;
-  visibility: hidden;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-.rules{
-  background-color: rgb(255, 255, 255);
-  color: #941e00;
-  padding: 5%;
-}
-.rules>h2{
-  padding: 5%;
-  font-family: monospace;
-  font-size: 46px;
-}
-.rules>p{
-  padding: 5%;
-  font-style: italic;
-  font-size: 18px;
-}
-#returnBtn {
-  box-shadow: inset 0px 1px 0px 0px #ffddd3;
-  background: linear-gradient(to bottom, #ffc8c8 5%, #eb8686 100%);
-  background-color: #eb8686;
-  border-radius: 6px;
-  border: 1px solid #ffc8c8;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 6px 24px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #eb8686;
-  margin-top: 20px;
-  margin-right: 2px;
-}
-#returnBtn:hover {
-  background: linear-gradient(to bottom, #eb8686 5%, #ffc8c8 100%);
-  background-color: #ffc8c8;
-}
-#returnBtn:active {
-  position: relative;
-  top: 1px;
-}
 #all-elements {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 100px;
 }
 #buttons {
   display: flex;
@@ -199,26 +147,12 @@ header .landing {
 .image-dundies-zoom{
     position: relative; 
 }
-
-  .container {
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 5px;
-    padding: 35px;
+.img-magnifier-glass {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    /*Set the size of the magnifier glass:*/
+    width: 100px;
+    height: 100px;
   }
-  .container img {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    -webkit-filter: grayscale(1);
-    filter: grayscale(1);
-    transition: all 100ms ease-out;
-  }
-  .container img:hover {
-    transform: scale(1.04);
-    -webkit-filter: grayscale(0);
-    filter: grayscale(0);
-  }
-  

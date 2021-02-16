@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-repeat: inherit;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-image: url("./assets/background-landing.png");
+}
+
+.timer{
+  margin: 50px;
+  color: white;
+}
+#page-1 {
+  background-repeat: no-repeat;
+  height: 100%;
+  visibility: visible;
+  margin-top: 100px;
+}
+#page-2 {
+  visibility: hidden;
+  display: none;
+  height: 800px;
+}
+#page-3 {
+  background-repeat: no-repeat;
+  height: 100%;
+  visibility: hidden;
+  display: none;
+}
+#page-4 {
+  background-repeat: no-repeat;
+  height: 100%;
+  visibility: hidden;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.rules{
+  background-color: rgb(255, 255, 255);
+  color: #941e00;
+  padding: 5%;
+}
+.rules>h2{
+  padding: 5%;
+  font-family: monospace;
+  font-size: 46px;
+}
+.rules>p{
+  padding: 5%;
+  font-style: italic;
+  font-size: 18px;
+}
+#returnBtn {
+  box-shadow: inset 0px 1px 0px 0px #ffddd3;
+  background: linear-gradient(to bottom, #ffc8c8 5%, #eb8686 100%);
+  background-color: #eb8686;
+  border-radius: 6px;
+  border: 1px solid #ffc8c8;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #eb8686;
+  margin-top: 20px;
+  margin-right: 2px;
+}
+#returnBtn:hover {
+  background: linear-gradient(to bottom, #eb8686 5%, #ffc8c8 100%);
+  background-color: #ffc8c8;
+}
+#returnBtn:active {
+  position: relative;
+  top: 1px;
+}
+#all-elements {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 100px;
+}
+#buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#all-elements img {
+  background-size: contain;
+}
+#game-name {
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+  font-size: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .landing {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#start-game {
+  box-shadow: inset 0px 1px 0px 0px #efdcfb;
+  background: linear-gradient(to bottom, #d7fff5 5%, #999999 100%);
+  background-color: #999999;
+  border-radius: 6px;
+  border: 1px solid #d7fff5;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #999999;
+  margin-top: 20px;
+  margin-right: 2px;
+}
+#start-game:hover {
+  background: linear-gradient(to bottom, #999999 5%, #d7fff5 100%);
+  background-color: #d7fff5;
+}
+#start-game:active {
+  position: relative;
+  top: 1px;
+}
+#how-to-play {
+  box-shadow: inset 0px 1px 0px 0px #efdcfb;
+  background: linear-gradient(to bottom, #d7fff5 5%, #999999 100%);
+  background-color: #999999;
+  border-radius: 6px;
+  border: 1px solid #d7fff5;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #999999;
+  margin-top: 20px;
+  margin-right: 2px;
+}
+#how-to-play:hover {
+  background: linear-gradient(to bottom, #999999 5%, #d7fff5 100%);
+  background-color: #d7fff5;
+}
+#how-to-play:active {
+  position: relative;
+  top: 1px;
+}
+
+.gameOver {
+  font-family: monospace;
+  font-size: 100px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.option,
+.startBtn {
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  font-size: 17px;
+  background: white;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.option:hover,
+.startBtn:hover {
+  background: grey;
+}
+.image-dundies-zoom{
+    position: relative; 
+}
+
+  .container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5px;
+    padding: 35px;
+  }
+  .container img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    transition: all 100ms ease-out;
+  }
+  .container img:hover {
+    transform: scale(1.04);
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
+  

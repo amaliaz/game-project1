@@ -16,6 +16,7 @@ const questionDisplay = document.querySelector(".question");
 const option1 = document.querySelector("#option1");
 const option2 = document.querySelector("#option2");
 const option3 = document.querySelector("#option3");
+const allOptions = document.querySelectorAll('.option');
 const progress = document.querySelector(".progress");
 const overlay = document.querySelector('.overlay');
 const rules = document.querySelector('.rules');
@@ -178,6 +179,46 @@ function handleClick(evt) {
 }
 allTrophees.forEach(function(trophee) {
   trophee.onclick = handleClick;
+});
+
+function handleAnswer(evt){
+  if (evt.target.id === evt.correctAnswer)
+  { 
+    page3.style.display = "flex";
+    page3.style.visibility = "visible";
+    wonGame.style.display = "flex";
+    setTimeout(function(){
+      wonGame.remove();
+    }, 5000);
+    wonGame.style.visibility = "visible";
+    gameOver.style.display = "none";
+    gameOver.style.visibility = "none";
+    questionDisplay.style.display = "none";
+    option1.style.display = "none";
+    option2.style.display = "none";
+    option3.style.display = "none";
+    overlay.style.display = "none";
+  }
+  else {
+    page3.style.display = "flex";
+    page3.style.visibility = "visible";
+    wonGame.style.display = "none";
+    wonGame.style.visibility = "none";
+    gameOver.style.display = "flex";
+    setTimeout(function(){
+      gameOver.remove();
+    }, 5000);
+    gameOver.style.visibility = "visible";
+    questionDisplay.style.display = "none";
+    option1.style.display = "none";
+    option2.style.display = "none";
+    option3.style.display = "none";
+    overlay.style.display = "none";
+  }
+}
+
+allOptions.forEach(function(option){
+option.onclick= handleAnswer;
 });
 
 function startGame() {

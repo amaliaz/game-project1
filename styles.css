@@ -33,10 +33,54 @@ body {
   font-family: monospace;
 }
 #page-3 {
-  background-repeat: no-repeat;
-  height: 100%;
+  height: 800px;
   visibility: hidden;
   display: none;
+  color: white;
+  font-size: 24px;
+  font-family: monospace;
+}
+.wonGame{
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  position: fixed; /* or absolute */
+  top: 25%;
+  left: 20%;
+  right: 20%;
+  z-index: 20;
+}
+.wonGame:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,0.2413340336134454) 100%);
+  z-index: -10;
+}
+.gameOver{
+  display: none;
+  align-items: center;
+  flex-direction: column;
+  position: fixed; /* or absolute */
+  top: 25%;
+  left: 20%;
+  right: 20%;
+  z-index: 20;
+}
+.gameOver:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,0.2413340336134454) 100%);
+  z-index: -10;
 }
 #page-4 {
   background-repeat: no-repeat;
@@ -268,18 +312,6 @@ header .landing {
 #how-to-play:active {
   position: relative;
   top: 1px;
-}
-
-.gameOver {
-  font-family: monospace;
-  font-size: 100px;
-  color: white;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .option,

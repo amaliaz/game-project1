@@ -199,18 +199,13 @@ body {
   position: relative;
   top: 1px;
 }
-.returnMain{
-  position: fixed;
-top: 10px;
-right: 10px;
-}
 #backBtn{
   box-shadow: inset 0px 1px 0px 0px #efdcfb;
   background: linear-gradient(to bottom, #d7fff5 5%, #999999 100%);
   background-color: #999999;
   border-radius: 6px;
   border: 1px solid #d7fff5;
-  display: inline-block;
+  display: none;
   cursor: pointer;
   color: #ffffff;
   font-family: Arial;

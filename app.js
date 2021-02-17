@@ -16,13 +16,12 @@ const questionDisplay = document.querySelector(".question");
 const option1 = document.querySelector("#option1");
 const option2 = document.querySelector("#option2");
 const option3 = document.querySelector("#option3");
-const allOptions = document.querySelectorAll('.option');
+const allOptions = document.querySelectorAll(".option");
 const progress = document.querySelector(".progress");
-const overlay = document.querySelector('.overlay');
-const rules = document.querySelector('.rules');
-const returnBtn = document.querySelector('#returnBtn');
-const backBtn = document.querySelector('#backBtn');
-const returnMain = document.querySelector('.returnMain');
+const overlay = document.querySelector(".overlay");
+const rules = document.querySelector(".rules");
+const returnBtn = document.querySelector("#returnBtn");
+const backBtn = document.querySelector("#backBtn");
 const allTrophees = document.querySelectorAll(".trophee");
 
 var correctAnswers = 0;
@@ -43,159 +42,174 @@ let question;
 // };
 
 const questions = {
-  pam_office : {
+  pam_office: {
     number: "1",
-    question: "How long had Pam been engaged to Roy in Season 1?",
-    option1: "One Year",
-    option2: "Three Years",
-    option3: "Eight Years",
+    question: "Which award does Pam receive at the Dundies?",
+    option1: "Hottest in the office award",
+    option2: "Whitest sneakers award",
+    option3: "Fine work award",
     correctAnswer: "option2",
-    clicked : false,
+    clicked: false,
   },
   jim_office: {
     number: "2",
-    question: "TATATA 2",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question: "What does Jim put in a jello mold first?",
+    option1: "Stapler",
+    option2: "Phone",
+    option3: "Pen",
+    correctAnswer: "option1",
+    clicked: false,
   },
   dwight_office: {
     number: "3",
-    question: "TATATA 3",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question: "What does Dwight’s family farm produce?",
+    option1: "Beets",
+    option2: "Carrots",
+    option3: "Milk",
+    correctAnswer: "option1",
+    clicked: false,
   },
   michael_office: {
     number: "4",
-    question: "TATATA 4",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question: "What is Michael’s favorite phrase?",
+    option1: "I’m Beyoncé, always.",
+    option2: "I’m not superstitious, but I am a little ‘stitious.",
+    option3: "that's what she said",
+    correctAnswer: "option3",
+    clicked: false,
   },
   phyllis_office: {
     number: "5",
-    question: "TATATA 5",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question: "Phylllis was happily married to :",
+    option1: "Bob Vance",
+    option2: "Bob Lance",
+    option3: "Bob Gass",
+    correctAnswer: "option1",
+    clicked: false,
   },
   kelly_offce: {
     number: "6",
-    question: "TATATA 6",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question: "What Is Kelly's Date Of Birth?",
+    option1: "June 13th 1979",
+    option2: "February 5th 1980",
+    option3: "November 29th 1982",
+    correctAnswer: "option2",
+    clicked: false,
   },
   stanley_office: {
     number: "7",
-    question: "TATATA 7",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question: "What does Stanley typically do during meetings?",
+    option1: "Crossword puzzles",
+    option2: "Drinks tea",
+    option3: "Eats pretzels",
+    correctAnswer: "option1",
+    clicked: false,
   },
   oscar_office: {
     number: "8",
-    question: "TATATA 8",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question: "What does Oscar do during the fire drill?",
+    option1: "Runs towards the door",
+    option2: "Goes under his desk",
+    option3: "Climbs through the ceiling",
+    correctAnswer: "option3",
+    clicked: false,
   },
   angela_office: {
     number: "9",
-    question: "TATATA 9",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question: "Which of Angela’s cats does Dwight freeze?",
+    option1: "Petals",
+    option2: "Sprinkles",
+    option3: "Lumpy",
+    correctAnswer: "option2",
+    clicked: false,
   },
   ryan_office: {
     number: "10",
-    question: "TATATA 10",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question:
+      "What was Ryan trying to heat up in the toaster oven when he started a fire?",
+    option1: "A cheesy pita",
+    option2: "An apple pie",
+    option3: "A pizza",
+    correctAnswer: "option1",
+    clicked: false,
   },
   daryl_office: {
     number: "11",
-    question: "TATATA 11",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question: "Which Member Of The Office Did Darryl Date?",
+    option1: "Karen",
+    option2: "Erin",
+    option3: "Kelly",
+    correctAnswer: "option3",
+    clicked: false,
   },
   toby_office: {
     number: "12",
-    question: "TATATA 12",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question: "Where Does Toby Move In Season 4?",
+    option1: "Costa Rica",
+    option2: "Australia",
+    option3: "Canada",
+    correctAnswer: "option1",
+    clicked: false,
   },
   kevin_office: {
     number: "13",
-    question: "TATATA 13",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question: "Who did Kevin get for his secret Santa?",
+    option1: "Meredith",
+    option2: "Michael",
+    option3: "Himself",
+    correctAnswer: "option3",
+    clicked: false,
   },
   andy_office: {
     number: "14",
-    question: "TATATA 14",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
+    question:
+      "What is Andy’s nickname for Jim for the early days of their relationship?",
+    option1: "Big Man",
+    option2: "Big Fish",
+    option3: "Big Tuna",
+    correctAnswer: "option3",
+    clicked: false,
   },
-  creg_office: {
+  creed_office: {
     number: "15",
-    question: "TATATA 15",
-    option1: "tatatta",
-    option2: "tatatta",
-    option3: "tatatta",
-    correctAnswer: "TATATA",
-  }
-}
+    question: "What Is Creed's Job Title?",
+    option1: "Quality Assurance Director",
+    option2: "Head of supplier relations",
+    option3: "Head of customer relations",
+    correctAnswer: "option1",
+    clicked: false,
+  },
+};
 
-var theDefinedOffice ;
+var theDefinedOffice;
 
 function handleClick(evt) {
-  if (!questions[evt.target.id].clicked){
+  if (!questions[evt.target.id].clicked) {
     questions[evt.target.id].clicked = true;
-  // console.log(evt.target.id)
-  // console.log(questions[evt.target.id]);
+    // console.log(evt.target.id)
+    // console.log(questions[evt.target.id]);
     theDefinedOffice = evt.target.id;
-  displayQuestion(questions[evt.target.id]);
-  questionDisplay.style.display = "flex";
-  option1.style.display = "flex";
-  option2.style.display = "flex";
-  option3.style.display = "flex";
-  overlay.style.display = "flex";
-  }
+    displayQuestion(questions[evt.target.id]);
+    questionDisplay.style.display = "flex";
+    option1.style.display = "flex";
+    option2.style.display = "flex";
+    option3.style.display = "flex";
+    overlay.style.display = "flex";
+  } 
   return question;
 }
-allTrophees.forEach(function(trophee) {
-
-    trophee.onclick = handleClick;
+allTrophees.forEach(function (trophee) {
+  trophee.onclick = handleClick;
 });
 
-function handleAnswer(evt){
+function handleAnswer(evt) {
   // console.log(theDefinedOffice);
-  if (evt.target.id === questions[theDefinedOffice].correctAnswer)
-  {console.log("I'm right")
+  if (evt.target.id === questions[theDefinedOffice].correctAnswer) {
+    console.log("I'm right");
     page3.style.display = "flex";
     page3.style.visibility = "visible";
     wonGame.style.display = "flex";
-    setTimeout(function(){
+    setTimeout(function () {
       wonGame.style.display = "none";
     }, 5000);
     wonGame.style.visibility = "visible";
@@ -206,19 +220,27 @@ function handleAnswer(evt){
     option2.style.display = "none";
     option3.style.display = "none";
     overlay.style.display = "none";
-  }
-  else {
-    {console.log("I'm wrong")}
+  } else {
+    {
+      console.log("I'm wrong");
+    }
     page3.style.display = "flex";
     page3.style.visibility = "visible";
     wonGame.style.display = "none";
     wonGame.style.visibility = "none";
     gameOver.style.display = "flex";
-    setTimeout(function(){
-      gameOver.style.display = "none";
+    setTimeout(function () {
+      page3.style.display = "none";
+  page3.style.visibility = "none";
+  gameOver.style.display = "none";
+  gameOver.style.visibility = "none";
+  backBtn.style.visibility = "none";
+  backBtn.style.display = "none";
     }, 5000);
     gameOver.style.visibility = "visible";
     questionDisplay.style.display = "none";
+    backBtn.style.visibility = "visible";
+    backBtn.style.display = "flex";
     option1.style.display = "none";
     option2.style.display = "none";
     option3.style.display = "none";
@@ -227,15 +249,13 @@ function handleAnswer(evt){
   console.log(questions);
 }
 
-
-allOptions.forEach(function(option){
-option.onclick= handleAnswer;
+allOptions.forEach(function (option) {
+  option.onclick = handleAnswer;
 });
 
 function startGame() {
   page2.style.display = "grid";
   page2.style.visibility = "visible";
-  returnMain.style.display = "flex";
   questionDisplay.style.display = "none";
   page1.style.display = "none";
   page1.style.visibility = "none";
@@ -280,9 +300,15 @@ function returnHome() {
 returnBtn.onclick = returnHome;
 console.log(returnBtn);
 
-function backHome() {
+function exitButton() {
   page2.style.display = "none";
   page2.style.visibility = "none";
+  page3.style.display = "none";
+  page3.style.visibility = "none";
+  gameOver.style.display = "none";
+  gameOver.style.visibility = "none";
+  backBtn.style.visibility = "none";
+  backBtn.style.display = "none";
   questionDisplay.style.display = "none";
   page1.style.display = "block";
   page1.style.visibility = "visible";
@@ -292,7 +318,7 @@ function backHome() {
   console.log("OK????");
 }
 
-backBtn.onclick = backHome;
+backBtn.onclick = exitButton;
 console.log(backBtn);
 
 function displayProgress(currentQuestion) {

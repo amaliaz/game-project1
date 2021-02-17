@@ -205,7 +205,7 @@ allTrophees.forEach(function (trophee) {
 function handleAnswer(evt) {
   // console.log(theDefinedOffice);
   if (evt.target.id === questions[theDefinedOffice].correctAnswer) {
-    console.log("I'm right");
+    // console.log("I'm right");
     page3.style.display = "flex";
     page3.style.visibility = "visible";
     wonGame.style.display = "flex";
@@ -220,10 +220,11 @@ function handleAnswer(evt) {
     option2.style.display = "none";
     option3.style.display = "none";
     overlay.style.display = "none";
+    checkAnswer(evt.target.id);
   } else {
-    {
-      console.log("I'm wrong");
-    }
+    // {
+    //   console.log("I'm wrong");
+    // }
     page3.style.display = "flex";
     page3.style.visibility = "visible";
     wonGame.style.display = "none";
@@ -246,7 +247,8 @@ function handleAnswer(evt) {
     option3.style.display = "none";
     overlay.style.display = "none";
   }
-  console.log(questions);
+  showScore(correctAnswers);
+  // console.log(questions);
 }
 
 allOptions.forEach(function (option) {
@@ -259,14 +261,13 @@ function startGame() {
   questionDisplay.style.display = "none";
   page1.style.display = "none";
   page1.style.visibility = "none";
-  progress.style.display = "none";
-  correctAnswers = 0;
-  console.log("hello");
-  console.log("OK????");
+  showScore(correctAnswers);
+  // console.log("hello");
+  // console.log("OK????");
 }
 
 buttonStart.onclick = startGame;
-console.log(buttonStart);
+// console.log(buttonStart);
 
 function rulesofGame() {
   page4.style.display = "flex";
@@ -275,14 +276,13 @@ function rulesofGame() {
   questionDisplay.style.display = "none";
   page1.style.display = "none";
   page1.style.visibility = "none";
-  progress.style.display = "none";
   correctAnswers = 0;
-  console.log("hello");
-  console.log("OK????");
+  // console.log("hello");
+  // console.log("OK????");
 }
 
 buttonRules.onclick = rulesofGame;
-console.log(buttonRules);
+// console.log(buttonRules);
 
 function returnHome() {
   page4.style.display = "none";
@@ -291,14 +291,13 @@ function returnHome() {
   questionDisplay.style.display = "none";
   page1.style.display = "block";
   page1.style.visibility = "visible";
-  progress.style.display = "none";
   correctAnswers = 0;
-  console.log("hello");
-  console.log("OK????");
+  // console.log("hello");
+  // console.log("OK????");
 }
 
 returnBtn.onclick = returnHome;
-console.log(returnBtn);
+// console.log(returnBtn);
 
 function exitButton() {
   page2.style.display = "none";
@@ -312,19 +311,14 @@ function exitButton() {
   questionDisplay.style.display = "none";
   page1.style.display = "block";
   page1.style.visibility = "visible";
-  progress.style.display = "none";
   correctAnswers = 0;
-  console.log("hello");
-  console.log("OK????");
+  // console.log("hello");
+  // console.log("OK????");
+  questions[theDefinedOffice].clicked=false;
 }
 
 backBtn.onclick = exitButton;
-console.log(backBtn);
-
-function displayProgress(currentQuestion) {
-  var progress = document.querySelector(".progress");
-  progress.innerHTML = `This is ${currentQuestion} of 10 dundies.`;
-}
+// console.log(backBtn);
 
 function displayQuestion(office) {
   questionDisplay.innerHTML = office.question;
@@ -332,21 +326,35 @@ function displayQuestion(office) {
   option2.innerHTML = office.option2;
   option3.innerHTML = office.option3;
 }
-
-function checkAnswer(e, question) {
-  if (e.target.innerHTML === question.correctAnswer) {
+function checkAnswer(e) {
+  if (e === questions[theDefinedOffice].correctAnswer) {
     correctAnswers++;
   }
+  console.log("hello" + questions[theDefinedOffice].correctAnswer)
 }
 function showScore(correctAnswers) {
   score.innerHTML = `You got ${correctAnswers} out of 10 dundies!`;
-  page1.style.visibility = "visible";
-  page2.style.visibility = "hidden";
-  page3.style.visibility = "visible";
-  gameOver.style.visibility = "visible";
-  startText.innerHTML = "Play Again";
-  buttonStart.style.visibility = "visible";
 }
+
+
+
+// function displayProgress(currentQuestion) {
+//   var progress = document.querySelector(".progress");
+//   progress.innerHTML = `This is ${currentQuestion} of 10 dundies.`;
+// }
+
+
+//On each click, check selected option and change to next question.
+// options.on('click', function(e){
+//   if (e.target.classList.contains("option")){
+    
+//     checkAnswer(e, question);
+//   } else {
+//     console.log("answer not selected");
+//   }
+    
+// });
+
 
 //   function moveToNextQuestion(currentQuestion){
 //     switch (currentQuestion){

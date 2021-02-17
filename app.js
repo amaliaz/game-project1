@@ -49,7 +49,7 @@ const questions = {
     option1: "One Year",
     option2: "Three Years",
     option3: "Eight Years",
-    correctAnswer: "Three Years",
+    correctAnswer: "option2",
   },
   jim_office: {
     number: "2",
@@ -165,17 +165,23 @@ const questions = {
   }
 }
 
+var theDefinedOffice ;
+var clicked = false;
 
 function handleClick(evt) {
-  console.log(evt.target.id)
-  console.log(questions[evt.target.id]);
+  // console.log(evt.target.id)
+  // console.log(questions[evt.target.id]);
+  if (!clicked) {
+    // Set clicked to true
+    clicked = true;
+    theDefinedOffice = evt.target.id;
   displayQuestion(questions[evt.target.id]);
   questionDisplay.style.display = "flex";
   option1.style.display = "flex";
   option2.style.display = "flex";
   option3.style.display = "flex";
   overlay.style.display = "flex";
-  
+  }
   return question;
 }
 allTrophees.forEach(function(trophee) {
@@ -183,13 +189,14 @@ allTrophees.forEach(function(trophee) {
 });
 
 function handleAnswer(evt){
-  if (questions[evt.target.id] === questions[evt.correctAnswer])
-  { 
+  // console.log(theDefinedOffice);
+  if (evt.target.id === questions[theDefinedOffice].correctAnswer)
+  {console.log("I'm right")
     page3.style.display = "flex";
     page3.style.visibility = "visible";
     wonGame.style.display = "flex";
     setTimeout(function(){
-      wonGame.remove();
+      wonGame.style.display = "none";
     }, 5000);
     wonGame.style.visibility = "visible";
     gameOver.style.display = "none";
@@ -201,13 +208,14 @@ function handleAnswer(evt){
     overlay.style.display = "none";
   }
   else {
+    {console.log("I'm wrong")}
     page3.style.display = "flex";
     page3.style.visibility = "visible";
     wonGame.style.display = "none";
     wonGame.style.visibility = "none";
     gameOver.style.display = "flex";
     setTimeout(function(){
-      gameOver.remove();
+      gameOver.style.display = "none";
     }, 5000);
     gameOver.style.visibility = "visible";
     questionDisplay.style.display = "none";
@@ -216,7 +224,9 @@ function handleAnswer(evt){
     option3.style.display = "none";
     overlay.style.display = "none";
   }
+  console.log(questions);
 }
+
 
 allOptions.forEach(function(option){
 option.onclick= handleAnswer;
@@ -303,7 +313,6 @@ function checkAnswer(e, question) {
   }
 }
 function showScore(correctAnswers) {
-  var score = document.getElementById("score");
   score.innerHTML = `You got ${correctAnswers} out of 10 dundies!`;
   page1.style.visibility = "visible";
   page2.style.visibility = "hidden";

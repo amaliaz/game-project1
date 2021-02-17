@@ -50,6 +50,7 @@ const questions = {
     option2: "Three Years",
     option3: "Eight Years",
     correctAnswer: "option2",
+    clicked : false,
   },
   jim_office: {
     number: "2",
@@ -166,14 +167,12 @@ const questions = {
 }
 
 var theDefinedOffice ;
-var clicked = false;
 
 function handleClick(evt) {
+  if (!questions[evt.target.id].clicked){
+    questions[evt.target.id].clicked = true;
   // console.log(evt.target.id)
   // console.log(questions[evt.target.id]);
-  if (!clicked) {
-    // Set clicked to true
-    clicked = true;
     theDefinedOffice = evt.target.id;
   displayQuestion(questions[evt.target.id]);
   questionDisplay.style.display = "flex";
@@ -185,7 +184,8 @@ function handleClick(evt) {
   return question;
 }
 allTrophees.forEach(function(trophee) {
-  trophee.onclick = handleClick;
+
+    trophee.onclick = handleClick;
 });
 
 function handleAnswer(evt){

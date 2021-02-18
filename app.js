@@ -185,7 +185,7 @@ function handleClick(evt) {
 // add class clicked to the gif if clicked
   if (!questions[evt.target.id].clicked) {
     questions[evt.target.id].clicked = true;
-    console.log(questions[evt.target.id].clicked);
+    // console.log(questions[evt.target.id].clicked);
     // console.log(questions[evt.target.id]);
     theDefinedOffice = evt.target.id;
     displayQuestion(questions[evt.target.id]);
@@ -199,13 +199,14 @@ function handleClick(evt) {
 }
 allTrophees.forEach(function (clickedTrophee) {
   clickedTrophee.onclick = handleClick;
-  removeFilter(clickedTrophee);
+  if (clickedTrophee.classList.contains('clicked')){
+    removeFilter();
+    console.log(clickedTrophee);
+  }
 });
 
-function removeFilter(trophee) {
-  if (trophee.clicked === true) {
-    filterContainer.style.filter = "none";
-  }
+function removeFilter() {
+  filterContainer.style.filter = "none";
 }
 
 //HANDLE GAME OVER MESSAGE AFTER ALL GIFS HAVE BEEN CLICKED
@@ -226,7 +227,6 @@ function displayGameOver() {
       option2.style.display = "none";
       option3.style.display = "none";
       overlay.style.display = "none";
-
 }
 
 //HANDLE ANSWER POP UPS DEPENDING THE OPTION SELECTED
@@ -360,7 +360,7 @@ function checkAnswer(e) {
   if (e === questions[theDefinedOffice].correctAnswer) {
     correctAnswers++;
   }
-  console.log("hello" + questions[theDefinedOffice].correctAnswer);
+  // console.log("hello" + questions[theDefinedOffice].correctAnswer);
 }
 
 //HANDLE THE DISPLAY OF THE CORRECT ANSWERS

@@ -433,13 +433,14 @@ header .landing {
 
   .container {
     position: relative;
-    height: 100%;
+    height: 80%;
     margin: 5%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
     color: white;
     font-size: 18px;
+
   }
   .hover {
     width: 100%;
@@ -455,4 +456,8 @@ header .landing {
     -webkit-filter: grayscale(0);
     filter: grayscale(0);
   }
-  
+  .audio{
+    width:100px;
+    height: 50px;
+    display:none;
+  }

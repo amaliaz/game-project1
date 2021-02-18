@@ -175,6 +175,7 @@ const questions = {
 };
 
 let numberOfQuestions = Object.keys(questions).length;
+numberOfQuestions =1;
 let numberOfAnswers = 0;
 var theDefinedOffice;
 
@@ -215,8 +216,6 @@ function removeFilter(element) {
 function displayGameOver() {
   page3.style.display = "flex";
   page3.style.visibility = "visible";
-  tryAgainBtn.style.visibility = "visible";
-  tryAgainBtn.style.display = "flex";
   tryAgainPop.style.display = "flex";
   tryAgainPop.style.visibility = "visible";
   wrongAnswerPop.style.display = "none";
@@ -228,6 +227,10 @@ function displayGameOver() {
   option2.style.display = "none";
   option3.style.display = "none";
   overlay.style.display = "none";
+  setTimeout(function () {
+    tryAgainPop.style.display = "none";
+    location.reload();
+  }, 5000);
 }
 
 //HANDLE ANSWER POP UPS DEPENDING THE OPTION SELECTED

@@ -38,8 +38,8 @@ body {
   height: 100px;
   visibility: hidden;
   display: none;
-  color: white;
-  font-size: 24px;
+  color: #941e00;
+  font-size: 40px;
   font-family: monospace;
   justify-content: center;
   align-items: center;
@@ -49,7 +49,7 @@ body {
   align-items: center;
   flex-direction: column;
   position: fixed; /* or absolute */
-  top: 25%;
+  top: 15%;
   left: 20%;
   right: 20%;
   z-index: 20;
@@ -71,7 +71,7 @@ body {
   align-items: center;
   flex-direction: column;
   position: fixed; /* or absolute */
-  top: 25%;
+  top: 15%;
   left: 20%;
   right: 20%;
   z-index: 20;
@@ -93,7 +93,7 @@ body {
   align-items: center;
   flex-direction: column;
   position: fixed; /* or absolute */
-  top: 25%;
+  top: 15%;
   left: 20%;
   right: 20%;
   z-index: 20;
@@ -120,16 +120,40 @@ body {
   justify-content: center;
   align-items: center;
   display: flex;
-  width: 600px;
+  width: 550px;
   height: 420px;
 }
 .tryAgain{
   justify-content: center;
   align-items: center;
   display: flex;
-  width: 600px;
-  height: 420px;
+  width: 400px;
+  height: 220px;
+  margin-top: 20px;
 }
+/* #tryAgainBtn{
+  box-shadow: inset 0px 1px 0px 0px #ffddd3;
+  background: linear-gradient(to bottom, #ffc8c8 5%, #eb8686 100%);
+  background-color: #eb8686;
+  border-radius: 6px;
+  border: 1px solid #ffc8c8;
+  display: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #eb8686;
+  margin-top: 20px;
+  margin-right: 2px;
+  flex-direction: column;
+}
+#tryAgainBtn:hover{
+  background: linear-gradient(to bottom, #eb8686 5%, #ffc8c8 100%);
+  background-color: #ffc8c8;
+} */
 #page-4 {
   background-repeat: no-repeat;
   height: 100%;
@@ -142,42 +166,47 @@ body {
 .question {
   font-size: 30px;
   font-family: monospace;
-  color: #000000;
+  color: #941e00;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  font-weight: bold;
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, 100%);
 }
 .option {
-  box-shadow: inset 0px 1px 0px 0px #efdcfb;
-  background: linear-gradient(to bottom, #d7fff5 5%, #999999 100%);
-  background-color: #999999;
-  border-radius: 6px;
-  border: 1px solid #d7fff5;
+  display: none;
+  font-family: monospace;
   cursor: pointer;
-  color: #000000;
-  font-family: Arial;
-  font-size: 15px;
-  font-weight:normal;
-  padding: 6px 24px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #999999;
-
-  margin-top: 20px;
+  outline: none;
+  border: none;
+  background-color: white;
+  width: 400px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 18px;
+  color:  #941e00;
+  box-shadow: 0 0 0 7px var(--light) inset;
+  margin-bottom: 15px;
+  margin-top: 30px;
   margin-right: 2px;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  display: none;
+  text-align: center;
+  padding: 5%;
 }
 .option:hover {
-  background: linear-gradient(to bottom, #999999 5%, #d7fff5 100%);
-  background-color: #d7fff5;
+color: rgb(255, 255, 255);
+font-family: monospace;
+font-size: 20px;
+background-color: #10f1ae;
 }
 .overlay{
   display: none;
   align-items: center;
   flex-direction: column;
   position: fixed; /* or absolute */
-  top: 35%;
+  top: 15%;
   left: 20%;
   right: 20%;
   z-index: 20;
@@ -251,11 +280,11 @@ body {
 }
 #backBtn{
   box-shadow: inset 0px 1px 0px 0px #efdcfb;
-  background: linear-gradient(to bottom, #d7fff5 5%, #999999 100%);
-  background-color: #999999;
+  background: linear-gradient(to bottom, #d7fff5 5%, #941e00 100%);
+  background-color: #941e00;
   border-radius: 6px;
   border: 1px solid #d7fff5;
-  display: none;
+  display: inline-block;
   cursor: pointer;
   color: #ffffff;
   font-family: Arial;
@@ -263,9 +292,9 @@ body {
   font-weight: bold;
   padding: 6px 24px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #999999;
-  text-align: center;
+  text-shadow: 0px 1px 0px #941e00;
   margin-top: 20px;
+  margin-right: 2px;
   padding: 1%;
   width: 100px;
   justify-content: center;
@@ -275,7 +304,7 @@ body {
   left: 45%;
 }
 #backBtn:hover {
-  background: linear-gradient(to bottom, #999999 5%, #d7fff5 100%);
+  background: linear-gradient(to bottom, #941e00 5%, #d7fff5 100%);
   background-color: #d7fff5;
 }
 #backBtn:active {
@@ -287,7 +316,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 100px;
+  margin: 50px;
 }
 #buttons {
   display: flex;
@@ -311,12 +340,13 @@ body {
 header .landing {
   max-width: 100%;
   max-height: 100%;
+
 }
 
 #start-game {
   box-shadow: inset 0px 1px 0px 0px #efdcfb;
-  background: linear-gradient(to bottom, #d7fff5 5%, #999999 100%);
-  background-color: #999999;
+  background: linear-gradient(to bottom, #d7fff5 5%, #941e00 100%);
+  background-color: #941e00;
   border-radius: 6px;
   border: 1px solid #d7fff5;
   display: inline-block;
@@ -327,12 +357,12 @@ header .landing {
   font-weight: bold;
   padding: 6px 24px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #999999;
+  text-shadow: 0px 1px 0px #941e00;
   margin-top: 20px;
   margin-right: 2px;
 }
 #start-game:hover {
-  background: linear-gradient(to bottom, #999999 5%, #d7fff5 100%);
+  background: linear-gradient(to bottom, #941e00 5%, #d7fff5 100%);
   background-color: #d7fff5;
 }
 #start-game:active {
@@ -341,8 +371,8 @@ header .landing {
 }
 #how-to-play {
   box-shadow: inset 0px 1px 0px 0px #efdcfb;
-  background: linear-gradient(to bottom, #d7fff5 5%, #999999 100%);
-  background-color: #999999;
+  background: linear-gradient(to bottom, #d7fff5 5%, #941e00 100%);
+  background-color: #941e00;
   border-radius: 6px;
   border: 1px solid #d7fff5;
   display: inline-block;
@@ -353,12 +383,12 @@ header .landing {
   font-weight: bold;
   padding: 6px 24px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #999999;
+  text-shadow: 0px 1px 0px #941e00;
   margin-top: 20px;
   margin-right: 2px;
 }
 #how-to-play:hover {
-  background: linear-gradient(to bottom, #999999 5%, #d7fff5 100%);
+  background: linear-gradient(to bottom, #941e00 5%, #d7fff5 100%);
   background-color: #d7fff5;
 }
 #how-to-play:active {
@@ -366,7 +396,6 @@ header .landing {
   top: 1px;
 }
 
-.option,
 .startBtn {
   height: 50px;
   width: 200px;
@@ -377,7 +406,6 @@ header .landing {
   padding: 10px;
 }
 
-.option:hover,
 .startBtn:hover {
   background: grey;
 }

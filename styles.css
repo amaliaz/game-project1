@@ -88,6 +88,28 @@ body {
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,0.2413340336134454) 100%);
   z-index: -10;
 }
+.tryAgainPop{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed; /* or absolute */
+  top: 25%;
+  left: 20%;
+  right: 20%;
+  z-index: 20;
+}
+.tryAgainPop:after {
+  position: fixed;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,0.2413340336134454) 100%);
+  z-index: -10;
+}
 .wrongAnswer{
   justify-content: center;
   align-items: center;
@@ -96,6 +118,13 @@ body {
   height: 320px;
 }
 .rightAnswer{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 600px;
+  height: 420px;
+}
+.tryAgain{
   justify-content: center;
   align-items: center;
   display: flex;

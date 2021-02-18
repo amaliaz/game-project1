@@ -24,12 +24,14 @@ const rules = document.querySelector(".rules");
 const returnBtn = document.querySelector("#returnBtn");
 const backBtn = document.querySelector("#backBtn");
 const allTrophees = document.querySelectorAll(".trophee");
-const wrongAnswer = document.querySelector('.wrongAnswer');
-const rightAnswer = document.querySelector('.rightAnswer');
+const wrongAnswer = document.querySelector(".wrongAnswer");
+const rightAnswer = document.querySelector(".rightAnswer");
+const tryAgainPop = document.querySelector(".tryAgainPop");
+const tryAgainBtn = document.querySelector("#tryAgainBtn");
+const filterContainer = document.querySelector(".hover");
 
 var correctAnswers = 0;
 let question;
-
 
 //OBJECT OF OBJECTS WITH ALL QUESTIONS AND ANSWERS
 const questions = {
@@ -172,11 +174,15 @@ const questions = {
   },
 };
 
+let numberOfQuestions = Object.keys(questions).length;
+let numberOfAnswers = 0;
 var theDefinedOffice;
-
+var myMusic;
 
 //HANDLE CLICKED FOR ALL GIFS
 function handleClick(evt) {
+  evt.target.classList.add('clicked');
+// add class clicked to the gif if clicked
   if (!questions[evt.target.id].clicked) {
     questions[evt.target.id].clicked = true;
     console.log(questions[evt.target.id].clicked);
@@ -188,43 +194,46 @@ function handleClick(evt) {
     option2.style.display = "flex";
     option3.style.display = "flex";
     overlay.style.display = "flex";
-    // displayGameOver(questions[theDefinedOffice].clicked)
-  }  
-  //WORKS BUT ONLY FOR ONE CLICK
-  // else{
-  //   questions[evt.target.id].clicked = false;
-  // }
+  }
   return question;
 }
-allTrophees.forEach(function (trophee) {
-  trophee.onclick = handleClick;
+allTrophees.forEach(function (clickedTrophee) {
+  clickedTrophee.onclick = handleClick;
+  removeFilter(clickedTrophee);
 });
 
+function removeFilter(trophee) {
+  if (trophee.clicked === true) {
+    filterContainer.style.filter = "none";
+  }
+}
 
 //HANDLE GAME OVER MESSAGE AFTER ALL GIFS HAVE BEEN CLICKED
 
-// function displayGameOver(question){
-//   if (question = true){
-//     page3.style.display = "flex";
-//     page3.style.visibility = "visible";
-//     backBtn.style.visibility = "visible";
-//     backBtn.style.display = "flex";
-//     wrongAnswerPop.style.display = "flex";
-//     wrongAnswerPop.style.visibility = "visible";
-//     rightAnswerPop.style.display = "none";
-//     rightAnswerPop.style.visibility = "none";
-//     questionDisplay.style.display = "none";
-//     option1.style.display = "none";
-//     option2.style.display = "none";
-//     option3.style.display = "none";
-//     overlay.style.display = "none";
-//   }
-// }
+function displayGameOver() {
+      page3.style.display = "flex";
+      page3.style.visibility = "visible";
+      tryAgainBtn.style.visibility = "visible";
+      tryAgainBtn.style.display = "flex";
+      tryAgainPop.style.display = "flex";
+      tryAgainPop.style.visibility = "visible";
+      wrongAnswerPop.style.display = "none";
+      wrongAnswerPop.style.visibility = "none";
+      rightAnswerPop.style.display = "none";
+      rightAnswerPop.style.visibility = "none";
+      questionDisplay.style.display = "none";
+      option1.style.display = "none";
+      option2.style.display = "none";
+      option3.style.display = "none";
+      overlay.style.display = "none";
+
+}
 
 //HANDLE ANSWER POP UPS DEPENDING THE OPTION SELECTED
 
 function handleAnswer(evt) {
   // console.log(theDefinedOffice);
+  numberOfAnswers++
   if (evt.target.id === questions[theDefinedOffice].correctAnswer) {
     // console.log("I'm right");
     page3.style.display = "flex";
@@ -232,7 +241,7 @@ function handleAnswer(evt) {
     rightAnswerPop.style.display = "flex";
     setTimeout(function () {
       rightAnswerPop.style.display = "none";
-    }, 5000);
+    }, 1000);
     rightAnswerPop.style.visibility = "visible";
     wrongAnswerPop.style.display = "none";
     wrongAnswerPop.style.visibility = "none";
@@ -253,10 +262,10 @@ function handleAnswer(evt) {
     wrongAnswerPop.style.display = "flex";
     setTimeout(function () {
       page3.style.display = "none";
-  page3.style.visibility = "none";
-  wrongAnswerPop.style.display = "none";
-  wrongAnswerPop.style.visibility = "none";
-    }, 5000);
+      page3.style.visibility = "none";
+      wrongAnswerPop.style.display = "none";
+      wrongAnswerPop.style.visibility = "none";
+    }, 1000);
     wrongAnswerPop.style.visibility = "visible";
     questionDisplay.style.display = "none";
     option1.style.display = "none";
@@ -266,13 +275,15 @@ function handleAnswer(evt) {
     checkAnswer(evt.target.id);
   }
   showScore(correctAnswers);
+  if (numberOfAnswers === numberOfQuestions){
+    displayGameOver();
+  }
   // console.log(questions);
 }
 
 allOptions.forEach(function (option) {
   option.onclick = handleAnswer;
 });
-
 
 //HANDLE START OF THE GAME BUTTON
 
@@ -292,8 +303,7 @@ function startGame() {
 buttonStart.onclick = startGame;
 // console.log(buttonStart);
 
-
-//HANDLE RULES OF THE GAME BUTTON 
+//HANDLE RULES OF THE GAME BUTTON
 
 function rulesofGame() {
   page4.style.display = "flex";
@@ -327,7 +337,6 @@ function returnHome() {
 returnBtn.onclick = returnHome;
 // console.log(returnBtn);
 
-
 //HANDLE RESTART BUTTON
 
 function exitButton() {
@@ -336,7 +345,6 @@ function exitButton() {
 
 backBtn.onclick = exitButton;
 // console.log(backBtn);
-
 
 //HANDLE THE DISPLAY OF THE QUESTION AND OPTIONS POP UP
 
@@ -352,33 +360,29 @@ function checkAnswer(e) {
   if (e === questions[theDefinedOffice].correctAnswer) {
     correctAnswers++;
   }
-  console.log("hello" + questions[theDefinedOffice].correctAnswer)
+  console.log("hello" + questions[theDefinedOffice].correctAnswer);
 }
 
 //HANDLE THE DISPLAY OF THE CORRECT ANSWERS
 function showScore(correctAnswers) {
-  score.innerHTML = `You got ${correctAnswers} out of 10 dundies!`;
+  score.innerHTML = `You got ${correctAnswers} out of 15 dundies!`;
 }
-
-
 
 // function displayProgress(currentQuestion) {
 //   var progress = document.querySelector(".progress");
 //   progress.innerHTML = `This is ${currentQuestion} of 10 dundies.`;
 // }
 
-
 //On each click, check selected option and change to next question.
 // options.on('click', function(e){
 //   if (e.target.classList.contains("option")){
-    
+
 //     checkAnswer(e, question);
 //   } else {
 //     console.log("answer not selected");
 //   }
-    
-// });
 
+// });
 
 //   function moveToNextQuestion(currentQuestion){
 //     switch (currentQuestion){

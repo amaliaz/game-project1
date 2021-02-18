@@ -1,3 +1,4 @@
+//ALL VARIABLES
 const page1 = document.querySelector("#page-1");
 const page2 = document.querySelector("#page-2");
 const page3 = document.querySelector("#page-3");
@@ -29,20 +30,8 @@ const rightAnswer = document.querySelector('.rightAnswer');
 var correctAnswers = 0;
 let question;
 
-// var questionOne = () => {
-//   question = {
-//     number: "1",
-//     question: "TATATA",
-//     option1: "tatatta",
-//     option2: "tatatta",
-//     option3: "tatatta",
-//     correctAnswer: "TATATA",
-//   };
-//   displayQuestion(question);
-//   displayProgress(question.number);
-//   return question;
-// };
 
+//OBJECT OF OBJECTS WITH ALL QUESTIONS AND ANSWERS
 const questions = {
   pam_office: {
     number: "1",
@@ -185,10 +174,12 @@ const questions = {
 
 var theDefinedOffice;
 
+
+//HANDLE CLICKED FOR ALL GIFS
 function handleClick(evt) {
   if (!questions[evt.target.id].clicked) {
     questions[evt.target.id].clicked = true;
-    // console.log(evt.target.id)
+    console.log(questions[evt.target.id].clicked);
     // console.log(questions[evt.target.id]);
     theDefinedOffice = evt.target.id;
     displayQuestion(questions[evt.target.id]);
@@ -197,7 +188,9 @@ function handleClick(evt) {
     option2.style.display = "flex";
     option3.style.display = "flex";
     overlay.style.display = "flex";
+    // displayGameOver(questions[theDefinedOffice].clicked)
   }  
+  //WORKS BUT ONLY FOR ONE CLICK
   // else{
   //   questions[evt.target.id].clicked = false;
   // }
@@ -206,6 +199,29 @@ function handleClick(evt) {
 allTrophees.forEach(function (trophee) {
   trophee.onclick = handleClick;
 });
+
+
+//HANDLE GAME OVER MESSAGE AFTER ALL GIFS HAVE BEEN CLICKED
+
+// function displayGameOver(question){
+//   if (question = true){
+//     page3.style.display = "flex";
+//     page3.style.visibility = "visible";
+//     backBtn.style.visibility = "visible";
+//     backBtn.style.display = "flex";
+//     wrongAnswerPop.style.display = "flex";
+//     wrongAnswerPop.style.visibility = "visible";
+//     rightAnswerPop.style.display = "none";
+//     rightAnswerPop.style.visibility = "none";
+//     questionDisplay.style.display = "none";
+//     option1.style.display = "none";
+//     option2.style.display = "none";
+//     option3.style.display = "none";
+//     overlay.style.display = "none";
+//   }
+// }
+
+//HANDLE ANSWER POP UPS DEPENDING THE OPTION SELECTED
 
 function handleAnswer(evt) {
   // console.log(theDefinedOffice);
@@ -240,13 +256,9 @@ function handleAnswer(evt) {
   page3.style.visibility = "none";
   wrongAnswerPop.style.display = "none";
   wrongAnswerPop.style.visibility = "none";
-  backBtn.style.visibility = "none";
-  backBtn.style.display = "none";
     }, 5000);
     wrongAnswerPop.style.visibility = "visible";
     questionDisplay.style.display = "none";
-    backBtn.style.visibility = "visible";
-    backBtn.style.display = "flex";
     option1.style.display = "none";
     option2.style.display = "none";
     option3.style.display = "none";
@@ -261,12 +273,17 @@ allOptions.forEach(function (option) {
   option.onclick = handleAnswer;
 });
 
+
+//HANDLE START OF THE GAME BUTTON
+
 function startGame() {
-  page2.style.display = "grid";
+  page2.style.display = "flex";
   page2.style.visibility = "visible";
   questionDisplay.style.display = "none";
   page1.style.display = "none";
   page1.style.visibility = "none";
+  backBtn.style.visibility = "visible";
+  backBtn.style.display = "flex";
   showScore(correctAnswers);
   // console.log("hello");
   // console.log("OK????");
@@ -274,6 +291,9 @@ function startGame() {
 
 buttonStart.onclick = startGame;
 // console.log(buttonStart);
+
+
+//HANDLE RULES OF THE GAME BUTTON 
 
 function rulesofGame() {
   page4.style.display = "flex";
@@ -290,6 +310,8 @@ function rulesofGame() {
 buttonRules.onclick = rulesofGame;
 // console.log(buttonRules);
 
+//HANDLE RETURN HOME BUTTON IN RULES PAGE
+
 function returnHome() {
   page4.style.display = "none";
   rules.style.display = "none";
@@ -305,24 +327,18 @@ function returnHome() {
 returnBtn.onclick = returnHome;
 // console.log(returnBtn);
 
+
+//HANDLE RESTART BUTTON
+
 function exitButton() {
-  page2.style.display = "none";
-  page2.style.visibility = "none";
-  page3.style.display = "none";
-  page3.style.visibility = "none";
-  wrongAnswerPop.style.display = "none";
-  wrongAnswerPop.style.visibility = "none";
-  backBtn.style.visibility = "none";
-  backBtn.style.display = "none";
-  questionDisplay.style.display = "none";
-  page1.style.display = "block";
-  page1.style.visibility = "visible";
-  correctAnswers = 0;
-  questions[theDefinedOffice].clicked=false;
+  location.reload();
 }
 
 backBtn.onclick = exitButton;
 // console.log(backBtn);
+
+
+//HANDLE THE DISPLAY OF THE QUESTION AND OPTIONS POP UP
 
 function displayQuestion(office) {
   questionDisplay.innerHTML = office.question;
@@ -330,12 +346,16 @@ function displayQuestion(office) {
   option2.innerHTML = office.option2;
   option3.innerHTML = office.option3;
 }
+
+//HANDLE THE CHECKS OF THE CORRECT ANSWERS
 function checkAnswer(e) {
   if (e === questions[theDefinedOffice].correctAnswer) {
     correctAnswers++;
   }
   console.log("hello" + questions[theDefinedOffice].correctAnswer)
 }
+
+//HANDLE THE DISPLAY OF THE CORRECT ANSWERS
 function showScore(correctAnswers) {
   score.innerHTML = `You got ${correctAnswers} out of 10 dundies!`;
 }

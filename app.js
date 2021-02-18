@@ -7,8 +7,8 @@ const allElements = document.querySelector("#all-elements");
 const gameName = document.querySelector("#game-name");
 const buttonStart = document.querySelector("#start-game");
 const buttonRules = document.querySelector("#how-to-play");
-const gameOver = document.querySelector(".gameOver");
-const wonGame = document.querySelector(".wonGame");
+const wrongAnswerPop = document.querySelector(".wrongAnswerPop");
+const rightAnswerPop = document.querySelector(".rightAnswerPop");
 const score = document.querySelector("#score");
 const startText = document.querySelector("#startText");
 const rulesOfGameText = document.querySelector("#rulesOfGameText");
@@ -23,6 +23,8 @@ const rules = document.querySelector(".rules");
 const returnBtn = document.querySelector("#returnBtn");
 const backBtn = document.querySelector("#backBtn");
 const allTrophees = document.querySelectorAll(".trophee");
+const wrongAnswer = document.querySelector('.wrongAnswer');
+const rightAnswer = document.querySelector('.rightAnswer');
 
 var correctAnswers = 0;
 let question;
@@ -195,7 +197,10 @@ function handleClick(evt) {
     option2.style.display = "flex";
     option3.style.display = "flex";
     overlay.style.display = "flex";
-  } 
+  }  
+  // else{
+  //   questions[evt.target.id].clicked = false;
+  // }
   return question;
 }
 allTrophees.forEach(function (trophee) {
@@ -208,13 +213,13 @@ function handleAnswer(evt) {
     // console.log("I'm right");
     page3.style.display = "flex";
     page3.style.visibility = "visible";
-    wonGame.style.display = "flex";
+    rightAnswerPop.style.display = "flex";
     setTimeout(function () {
-      wonGame.style.display = "none";
+      rightAnswerPop.style.display = "none";
     }, 5000);
-    wonGame.style.visibility = "visible";
-    gameOver.style.display = "none";
-    gameOver.style.visibility = "none";
+    rightAnswerPop.style.visibility = "visible";
+    wrongAnswerPop.style.display = "none";
+    wrongAnswerPop.style.visibility = "none";
     questionDisplay.style.display = "none";
     option1.style.display = "none";
     option2.style.display = "none";
@@ -227,18 +232,18 @@ function handleAnswer(evt) {
     // }
     page3.style.display = "flex";
     page3.style.visibility = "visible";
-    wonGame.style.display = "none";
-    wonGame.style.visibility = "none";
-    gameOver.style.display = "flex";
+    rightAnswerPop.style.display = "none";
+    rightAnswerPop.style.visibility = "none";
+    wrongAnswerPop.style.display = "flex";
     setTimeout(function () {
       page3.style.display = "none";
   page3.style.visibility = "none";
-  gameOver.style.display = "none";
-  gameOver.style.visibility = "none";
+  wrongAnswerPop.style.display = "none";
+  wrongAnswerPop.style.visibility = "none";
   backBtn.style.visibility = "none";
   backBtn.style.display = "none";
     }, 5000);
-    gameOver.style.visibility = "visible";
+    wrongAnswerPop.style.visibility = "visible";
     questionDisplay.style.display = "none";
     backBtn.style.visibility = "visible";
     backBtn.style.display = "flex";
@@ -246,6 +251,7 @@ function handleAnswer(evt) {
     option2.style.display = "none";
     option3.style.display = "none";
     overlay.style.display = "none";
+    checkAnswer(evt.target.id);
   }
   showScore(correctAnswers);
   // console.log(questions);
@@ -304,16 +310,14 @@ function exitButton() {
   page2.style.visibility = "none";
   page3.style.display = "none";
   page3.style.visibility = "none";
-  gameOver.style.display = "none";
-  gameOver.style.visibility = "none";
+  wrongAnswerPop.style.display = "none";
+  wrongAnswerPop.style.visibility = "none";
   backBtn.style.visibility = "none";
   backBtn.style.display = "none";
   questionDisplay.style.display = "none";
   page1.style.display = "block";
   page1.style.visibility = "visible";
   correctAnswers = 0;
-  // console.log("hello");
-  // console.log("OK????");
   questions[theDefinedOffice].clicked=false;
 }
 

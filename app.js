@@ -175,7 +175,6 @@ const questions = {
 };
 
 let numberOfQuestions = Object.keys(questions).length;
-numberOfQuestions =1;
 let numberOfAnswers = 0;
 var theDefinedOffice;
 

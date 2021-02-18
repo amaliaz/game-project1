@@ -177,12 +177,11 @@ const questions = {
 let numberOfQuestions = Object.keys(questions).length;
 let numberOfAnswers = 0;
 var theDefinedOffice;
-var myMusic;
 
 //HANDLE CLICKED FOR ALL GIFS
 function handleClick(evt) {
-  evt.target.classList.add('clicked');
-// add class clicked to the gif if clicked
+  evt.target.classList.add("clicked");
+  // add class clicked to the gif if clicked
   if (!questions[evt.target.id].clicked) {
     questions[evt.target.id].clicked = true;
     // console.log(questions[evt.target.id].clicked);
@@ -195,45 +194,47 @@ function handleClick(evt) {
     option3.style.display = "flex";
     overlay.style.display = "flex";
   }
+  console.log(evt.target);
+  if (evt.target.classList.contains("clicked")) {
+    removeFilter(evt.target);
+    console.log("remove");
+  }
   return question;
 }
+
 allTrophees.forEach(function (clickedTrophee) {
   clickedTrophee.onclick = handleClick;
-  if (clickedTrophee.classList.contains('clicked')){
-    removeFilter();
-    console.log(clickedTrophee);
-  }
 });
 
-function removeFilter() {
-  filterContainer.style.filter = "none";
+function removeFilter(element) {
+  element.style.filter = "none";
 }
 
 //HANDLE GAME OVER MESSAGE AFTER ALL GIFS HAVE BEEN CLICKED
 
 function displayGameOver() {
-      page3.style.display = "flex";
-      page3.style.visibility = "visible";
-      tryAgainBtn.style.visibility = "visible";
-      tryAgainBtn.style.display = "flex";
-      tryAgainPop.style.display = "flex";
-      tryAgainPop.style.visibility = "visible";
-      wrongAnswerPop.style.display = "none";
-      wrongAnswerPop.style.visibility = "none";
-      rightAnswerPop.style.display = "none";
-      rightAnswerPop.style.visibility = "none";
-      questionDisplay.style.display = "none";
-      option1.style.display = "none";
-      option2.style.display = "none";
-      option3.style.display = "none";
-      overlay.style.display = "none";
+  page3.style.display = "flex";
+  page3.style.visibility = "visible";
+  tryAgainBtn.style.visibility = "visible";
+  tryAgainBtn.style.display = "flex";
+  tryAgainPop.style.display = "flex";
+  tryAgainPop.style.visibility = "visible";
+  wrongAnswerPop.style.display = "none";
+  wrongAnswerPop.style.visibility = "none";
+  rightAnswerPop.style.display = "none";
+  rightAnswerPop.style.visibility = "none";
+  questionDisplay.style.display = "none";
+  option1.style.display = "none";
+  option2.style.display = "none";
+  option3.style.display = "none";
+  overlay.style.display = "none";
 }
 
 //HANDLE ANSWER POP UPS DEPENDING THE OPTION SELECTED
 
 function handleAnswer(evt) {
   // console.log(theDefinedOffice);
-  numberOfAnswers++
+  numberOfAnswers++;
   if (evt.target.id === questions[theDefinedOffice].correctAnswer) {
     // console.log("I'm right");
     page3.style.display = "flex";
@@ -275,7 +276,7 @@ function handleAnswer(evt) {
     checkAnswer(evt.target.id);
   }
   showScore(correctAnswers);
-  if (numberOfAnswers === numberOfQuestions){
+  if (numberOfAnswers === numberOfQuestions) {
     displayGameOver();
   }
   // console.log(questions);

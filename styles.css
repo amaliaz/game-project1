@@ -29,7 +29,6 @@ body {
 #page-2 {
   visibility: hidden;
   display: none;
-  height: 800px;
   color: white;
   font-size: 24px;
   font-family: monospace;
@@ -269,7 +268,6 @@ body {
   margin-top: 20px;
   padding: 1%;
   width: 100px;
-  align-items: center;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -456,8 +454,11 @@ header .landing {
     -webkit-filter: grayscale(0);
     filter: grayscale(0);
   }
-  .audio{
-    width:100px;
-    height: 50px;
-    display:none;
+  audio{
+    width:200px;
+    height: 30px;
+    position: relative;
+    bottom: 33px;
+    left: 60px;
+    /* display:none; */
   }
